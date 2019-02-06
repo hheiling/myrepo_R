@@ -44,8 +44,8 @@ Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
 ## Running example using the compiled R package:
 Znew_gen2.Rfunction(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
 
-## Error received:
-# error: arma::memory::acquire(): out of memory
-# Error in Znew_gen2(U, Z, group, cols, n, q, d, pBigMat, J) : 
-#   std::bad_alloc
+    ## Error received:
+    # error: arma::memory::acquire(): out of memory
+    # Error in Znew_gen2(U, Z, group, cols, n, q, d, pBigMat, J) : 
+    #   std::bad_alloc
 
