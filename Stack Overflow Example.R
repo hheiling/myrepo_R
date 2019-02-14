@@ -1,6 +1,7 @@
-## Example for Stack Exchange
+## Example for Stack Overflow
 
-# library(devtools)
+# The following libraries will be uploaded with the package:
+
 # library(lme4)
 # library(irr)
 # library(ncvreg)
@@ -14,6 +15,10 @@
 # library(bigalgebra)
 # library(BH)
 # library(glmnet)
+
+library(devtools)
+library(remotes)
+install_github("hheiling/myrepo_R", subdir = "HelpWithZnewgen2")
 
 library(HelpWithZnewgen2)
 
@@ -37,7 +42,7 @@ J_SpMat = Matrix(0, 9, 6, sparse = TRUE)
     zeros = zeros + i
   }
 
-## Running example by sourcing the .cpp file by itself (no error): (uncomment line below)
+## Running example by sourcing the .cpp file by itself (no error): 
 Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
     ## This ran properly if the lines "First For Loop" and "Second For Loop" appear
 
