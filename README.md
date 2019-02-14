@@ -11,4 +11,4 @@ This repo includes the R package "HelpWithZnewgen2" and its .tar.gz file. This R
 
 The file "Stack Overflow Example.R" contains the example code provided to Stack Overflow that produces the sample matrices/vectors/other numbers and runs the Znew_gen2 function, producing the errors of interest.
 
-The Znew_gen2 function itself is provided in the "Znew_gen2.cpp" file in the `src` folder of the package.
+The Znew_gen2 function itself is provided in the "Znew_gen2.cpp" file above as well as in the `src` folder of the package (HelpWithZnewgen2/src/Znew_gen2.cpp).
