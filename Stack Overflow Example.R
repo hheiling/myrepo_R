@@ -42,10 +42,6 @@ J_SpMat = Matrix(0, 9, 6, sparse = TRUE)
     zeros = zeros + i
   }
 
-## Running example by sourcing the .cpp file by itself (no error): 
-Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
-    ## This ran properly if the lines "First For Loop" and "Second For Loop" appear
-
 ## Running example using the compiled R package:
 Znew_gen2.Rfunction(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
 
@@ -53,4 +49,8 @@ Znew_gen2.Rfunction(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
     # error: arma::memory::acquire(): out of memory
     # Error in Znew_gen2(U, Z, group, cols, n, q, d, pBigMat, J) : 
     #   std::bad_alloc
+
+## Running example by sourcing the .cpp file by itself (no error): 
+Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
+    ## This ran properly if the lines "First For Loop" and "Second For Loop" appear
 
