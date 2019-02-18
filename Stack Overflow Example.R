@@ -1,6 +1,18 @@
 ## Example for Stack Overflow
 
-# The following libraries will be uploaded with the package:
+# Source the "Znew_gen2.cpp" file independently from the R package:
+
+## Code to download the "Znew_gen2.cpp" file from the GitHub repo and 
+## specify where you want the file to download to:
+destination_file = "Source_Code_Znew_gen2.cpp" 
+# Can specify however you like, but must not have spaces in the filename
+download.file(url = "https://raw.githubusercontent.com/hheiling/myrepo_R/master/Znew_gen2.cpp", 
+              destfile = destination_file)
+sourceCpp(file = destination_file)
+
+# Instructions to installation the example "HelpWithZnewgen2" R package:
+
+# Note: The following libraries will be uploaded with the package:
 
 # library(lme4)
 # library(irr)
@@ -44,13 +56,6 @@ J_SpMat = Matrix(0, 9, 6, sparse = TRUE)
   
 ## Running example by sourcing the .cpp file by itself (no error): 
 
-### Code to download the "Znew_gen2.cpp" file from the GitHub repo and 
-### specify where you want the file to download to:
-destination_file = "Source_Code_Znew_gen2.cpp" 
-  # Can specify however you like, but must not have spaces in the filename
-download.file(url = "https://raw.githubusercontent.com/hheiling/myrepo_R/master/Znew_gen2.cpp", 
-              destfile = destination_file)
-sourceCpp(file = destination_file)
 Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
   ## This ran properly if the lines "First For Loop", "Second For Loop", and "End of Function" appear
 

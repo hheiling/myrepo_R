@@ -44,6 +44,6 @@ void Znew_gen2( const arma::mat& U, const arma::mat& Z, const arma::vec& g, cons
     }
   }
   
-  Rprintf("End of Function \n")
+  Rprintf("End of Function \n");
 }
 
