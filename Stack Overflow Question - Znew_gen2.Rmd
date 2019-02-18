@@ -85,6 +85,11 @@ My working example is provided here:
 
 ```{r}
 # Working Example:
+
+library(bigmemory)
+library(Matrix)
+library(Rcpp)
+
 set.seed(1)
 U = matrix(rnorm(3000), nrow=100, ncol=30)
 Z = matrix(rnorm(15000), nrow = 500, ncol = 30)
