@@ -41,6 +41,19 @@ J_SpMat = Matrix(0, 9, 6, sparse = TRUE)
     sumx = sumy
     zeros = zeros + i
   }
+  
+## Running example by sourcing the .cpp file by itself (no error): 
+
+### Code to download the "Znew_gen2.cpp" file from the GitHub repo and 
+### specify where you want the file to download to:
+destination_file = "Source_Code_Znew_gen2.cpp" 
+  # Can specify however you like, but must not have spaces in the filename
+download.file(url = "https://raw.githubusercontent.com/hheiling/myrepo_R/master/Znew_gen2.cpp", 
+              destfile = destination_file)
+sourceCpp(file = destination_file)
+Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
+  ## This ran properly if the lines "First For Loop", "Second For Loop", and "End of Function" appear
+
 
 ## Running example using the compiled R package:
   
@@ -50,16 +63,4 @@ Znew_gen2.Rfunction(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
     # error: arma::memory::acquire(): out of memory
     # Error in Znew_gen2(U, Z, group, cols, n, q, d, pBigMat, J) : 
     #   std::bad_alloc
-
-## Running example by sourcing the .cpp file by itself (no error): 
-
-### Code to download the "Znew_gen2.cpp" file from the GitHub repo and 
-### specify where you want the file to download to:
-destination_file = "Source_Code_Znew_gen2.cpp" 
-    # Can specify however you like, but must not have spaces in the filename
-download.file(url = "https://raw.githubusercontent.com/hheiling/myrepo_R/master/Znew_gen2.cpp", 
-              destfile = destination_file)
-sourceCpp(file = destination_file)
-Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
-    ## This ran properly if the lines "First For Loop" and "Second For Loop" appear
 
