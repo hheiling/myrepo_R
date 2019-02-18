@@ -71,6 +71,8 @@ This function can be found in the `Znew_gen2.cpp` file in the GitHub repo.
 This file can be sourced as follows:
 
 ```{r}
+library(Rcpp)
+
 # Code to download the "Znew_gen2.cpp" file from the GitHub repo  
 ## Specify where you want the file to download to:
 destination_file = "Source_Code_Znew_gen2.cpp" 
@@ -88,7 +90,6 @@ My working example is provided here:
 
 library(bigmemory)
 library(Matrix)
-library(Rcpp)
 
 set.seed(1)
 U = matrix(rnorm(3000), nrow=100, ncol=30)
