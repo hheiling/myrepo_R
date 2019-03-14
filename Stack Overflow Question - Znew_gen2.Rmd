@@ -62,7 +62,7 @@ Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
 
 However, when I place this same Znew_gen2 function in an R package and call this function from the R package, I get the error: `error: arma::memory::acquire(): out of memory`. For illustrative purposes, I have created an R package named `HelpWithZnewgen2` and call the Znew_gen2 Rcpp function using a wrapper function named `Znew_gen2.Rfunction` (further details regarding the package and the wrapper function are provided later in the "References" section).
 
-```{r}
+```{r, eval=FALSE}
 # Instructions to download the `HelpWithZnewgen2` package:
 library(devtools)
 library(remotes)
@@ -94,7 +94,7 @@ All of the code mentioned in this post can be found in the GitHub repo <https://
 
 My C++ function, named `Znew_gen2`, is provided below. It is also provided in the `Znew_gen2.cpp` file in the Github repo.
 
-```{r, echo=FALSE}
+```{r, eval=FALSE}
 #define ARMA_64BIT_WORD
 #include <RcppArmadillo.h>
 // [[Rcpp::depends(BH, bigmemory, RcppArmadillo)]]
