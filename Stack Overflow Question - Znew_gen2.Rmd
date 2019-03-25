@@ -45,7 +45,7 @@ J_SpMat = Matrix(0, 9, 6, sparse = TRUE)
 
 When I run the working example and call the Znew_gen2 function using sourceCPP, as shown below, the function runs with no errors. (The Znew_gen2 function itself is provided later under the "References" section)
 
-```{r, eval=FALSE}
+```{r}
 library(Rcpp)
 
 ## Code to download the "Znew_gen2.cpp" file from the GitHub repo and 
@@ -60,9 +60,18 @@ sourceCpp(file = destination_file)
 Znew_gen2(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
 ```
 
+```{r}
+## Output:
+
+# First For Loop 
+# Second For Loop 
+# End of Function 
+```
+
+
 However, when I place this same Znew_gen2 function in an R package and call this function from the R package, I get the error: `error: arma::memory::acquire(): out of memory`. For illustrative purposes, I have created an R package named `HelpWithZnewgen2` and call the Znew_gen2 Rcpp function using a wrapper function named `Znew_gen2.Rfunction` (further details regarding the package and the wrapper function are provided later in the "References" section).
 
-```{r, eval=FALSE}
+```{r}
 # Instructions to download the `HelpWithZnewgen2` package:
 library(devtools)
 library(remotes)
@@ -71,7 +80,7 @@ install_github("hheiling/myrepo_R", subdir = "HelpWithZnewgen2")
 library(HelpWithZnewgen2)
 
 # Calling the function from the compiled package:
-Znew_gen2.Rfunction(U, Z, group, cols, n, q, d, Znew@address, J_SpMat)
+try(Znew_gen2.Rfunction(U, Z, group, cols, n, q, d, Znew@address, J_SpMat))
 ```
 
 The error received:
