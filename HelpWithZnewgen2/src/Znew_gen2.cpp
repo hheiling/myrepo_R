@@ -1,5 +1,5 @@
 
-#define ARMA_64BIT_WORD
+// #define ARMA_64BIT_WORD
 #include <RcppArmadillo.h>
 // [[Rcpp::depends(BH, bigmemory, RcppArmadillo)]]
 #include <bigmemory/MatrixAccessor.hpp>
